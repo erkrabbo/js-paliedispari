@@ -58,15 +58,16 @@ function paliExercise(){
 }
 
 function evenOddExercise(){
-    const choice = parseInt(prompt('Digita 0 per pari 1 per dispari:'));
+    let choice = parseInt(prompt('Digita 0 per pari 1 per dispari:'));
 
     while (choice != 0 && choice != 1){
         choice = parseInt(prompt('input errato. Digita 0 per pari 1 per dispari:'));
+        console.log(choice)
     }
 
-    const userNumber = parseInt(prompt('Scegli un numero da 1 a 5: '));
+    let userNumber = parseInt(prompt('Scegli un numero da 1 a 5: '));
 
-    while (userNumber < 1 || userNumber > 5){
+    while (userNumber < 1 || userNumber > 5 || isNaN(userNumber)){
         userNumber = parseInt(prompt('Non hai inserito un numero valido. Scegli un numero da 1 a 5: '));
     }
 
@@ -76,9 +77,9 @@ function evenOddExercise(){
 
     if ((sum % 2 && choice) || ( !(sum % 2 && !choice))){
         console.log(pcNumber);
-        msg.innerHTML = 'grande hai vinto!';
+        msg.innerHTML = `il computer ha scelto ${pcNumber}. La somma è ${sum}. Grande hai vinto!` ;
     } else{
         console.log(pcNumber);
-        msg.innerHTML = 'ritenta sarai più fortunato...'
+        msg.innerHTML = `il computer ha scelto ${pcNumber}. La somma è ${sum}. Ritenta sarai più fortunato...`
     }
 }
