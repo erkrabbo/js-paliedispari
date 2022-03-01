@@ -1,12 +1,14 @@
 const msg = document.createElement('h1');
-msg.innerHTML = 'SCEGLI QUALE ESERCIZIO CORREGGERE'
+reset();
 document.body.prepend(msg);
 
 let palEx = document.querySelector('#palibtn');
 let parDisEx = document.querySelector('#evenOdd');
+let res = document.querySelector('#reset');
 
 palEx.addEventListener('click', paliExercise);
 parDisEx.addEventListener('click', evenOddExercise);
+res.addEventListener('click', reset);
 
 function paliExercise(){
     let userWord = prompt('Quale parola vuoi verificare?').trim();
@@ -82,4 +84,8 @@ function evenOddExercise(){
         console.log(pcNumber);
         msg.innerHTML = `il computer ha scelto ${pcNumber}. La somma è ${sum}. Ritenta sarai più fortunato...`
     }
+}
+
+function reset(){
+    msg.innerHTML = 'SCEGLI QUALE ESERCIZIO CORREGGERE';
 }
