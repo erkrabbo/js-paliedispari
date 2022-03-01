@@ -73,7 +73,7 @@ function evenOddExercise(){
         parDisOption.innerHTML = arrChoice[i];
         parDisOption.value = 1;
         if(parDisOption.innerHTML == 'pari'){
-            parDisOption.setAttribute('selected', 'selected');
+
             parDisOption.value = 0;
         }
         parDisChoice.append(parDisOption);
@@ -112,9 +112,9 @@ function evenOddExercise(){
             sum = userNumber + pcNumber;
     
             const selIndex = parDisChoice.selectedIndex;
-            const choice = parDisChoice.options[selIndex];
+            const choice = parDisChoice.options[selIndex].value;
     
-            if ((sum % 2 && choice) || ( !(sum % 2 && !choice))){
+            if ((sum % 2 && choice) || (!sum % 2 && !choice)){
                 console.log(pcNumber);
                 msg.innerHTML = `il computer ha scelto ${pcNumber}. La somma è ${sum}. Grande hai vinto!` ;
             } else{
